@@ -32,7 +32,7 @@ import java.util.Scanner;
 
 public class C1 {
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		final Scanner scanner = new Scanner(System.in);
 
 		final C1 c1 = new C1();
@@ -46,7 +46,7 @@ public class C1 {
 		scanner.close();
 	}
 
-	private double getArea(Point point1, Point point2, Point point3) {
+	private double getArea(final Point point1, final Point point2, final Point point3) {
 		final double lineA = getLine(point1, point2);
 		final double lineB = getLine(point1, point3);
 		final double lineC = getLine(point2, point3);
@@ -64,7 +64,7 @@ public class C1 {
 		return nArea;
 	}
 
-	private int getNnumberOfLines(double radious, double lineA, double lineB, double lineC) {
+	private int getNnumberOfLines(final double radious, final double lineA, final double lineB, final double lineC) {
 		//
 		System.out.println(getAngle(radious, lineA));
 		System.out.println(Math.PI / getAngle(radious, lineB));
@@ -72,21 +72,22 @@ public class C1 {
 		return 4;
 	}
 
-	private double getAngle(double radious, double line) {
+	private double getAngle(final double radious, final double line) {
 		final double OM = Math.sqrt(Math.abs(Math.pow(radious, 2) - Math.pow(line, 2) / 4));
 		System.out.println(radious + " - " + line + " - " + OM);
 		return Math.acos(OM * line / Math.pow(radious, 2));
 	}
 
-	private double getLine(Point point1, Point point2) {
-		return Math.sqrt(Math.pow(point1.getPossition1() - point2.getPossition1(), 2) + Math.pow(point1.getPossition2() - point2.getPossition2(), 2));
+	private double getLine(final Point point1, final Point point2) {
+		return Math.sqrt(Math.pow(point1.getPossition1() - point2.getPossition1(), 2)
+				+ Math.pow(point1.getPossition2() - point2.getPossition2(), 2));
 	}
 
 	private class Point {
 		private final double possition1;
 		private final double possition2;
 
-		public Point(double possition1, double possition2) {
+		public Point(final double possition1, final double possition2) {
 			super();
 			this.possition1 = possition1;
 			this.possition2 = possition2;

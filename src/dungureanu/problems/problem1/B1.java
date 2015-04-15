@@ -39,7 +39,7 @@ public class B1 {
 
 	private final static String cellNumber = "ZABCDEFGHIJKLMNOPQRSTUVWXY";
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		final Scanner scanner = new Scanner(System.in);
 		int lines = scanner.nextInt();
 
@@ -53,7 +53,7 @@ public class B1 {
 		scanner.close();
 	}
 
-	private String getNewCoordinates(String coordinates) {
+	private String getNewCoordinates(final String coordinates) {
 		final String newCoordinates;
 		if (Pattern.matches("R\\d+C\\d+", coordinates)) {
 			final Matcher matcher = Pattern.compile("\\d+").matcher(coordinates);
@@ -88,7 +88,7 @@ public class B1 {
 		return buffer.toString();
 	}
 
-	private int getCellNumber(String coordinate) {
+	private int getCellNumber(final String coordinate) {
 		int numberCoordinate = 0;
 		final StringBuffer buffer = new StringBuffer(coordinate);
 		buffer.reverse();

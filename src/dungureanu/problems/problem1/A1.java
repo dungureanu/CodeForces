@@ -24,7 +24,7 @@ import java.util.Scanner;
 
 public class A1 {
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		final Scanner scanner = new Scanner(System.in);
 
 		final A1 a1 = new A1();
@@ -33,7 +33,7 @@ public class A1 {
 		scanner.close();
 	}
 
-	private void solution(long n, long m, long a) {
+	private void solution(final long n, final long m, final long a) {
 		final long total = (n % a == 0 ? n / a : n / a + 1) * (m % a == 0 ? m / a : m / a + 1);
 		System.out.println(total);
 	}
